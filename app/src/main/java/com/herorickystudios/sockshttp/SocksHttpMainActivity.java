@@ -253,14 +253,14 @@ public class SocksHttpMainActivity extends BaseActivity
 				operadora1Rb.setChecked(true);
 
 			}
-			if(payloadprefs.equals(getString(R.string.payloadoperadora2))){
+			if(payloadEdit.getText().toString().equals(getString(R.string.payloadoperadora2))){
 				operadora2Rb.setChecked(true);
 
 			}
-			if(payloadprefs.equals(getString(R.string.payloadoperadora3))){
+			if(payloadEdit.getText().toString().equals(getString(R.string.payloadoperadora3))){
 				operadora3Rb.setChecked(true);
 			}
-			if(payloadprefs.equals(getString(R.string.payloadoperadora4))){
+			if(payloadEdit.getText().toString().equals(getString(R.string.payloadoperadora4))){
 				operadora4Rb.setChecked(true);
 			}
 		}
@@ -343,6 +343,12 @@ public class SocksHttpMainActivity extends BaseActivity
 
 		configMsgLayout = (LinearLayout) findViewById(R.id.activity_mainMensagemConfigLinearLayout);
 		configMsgText = (TextView) findViewById(R.id.activity_mainMensagemConfigTextView);
+
+
+		//Mantendo todos os dados sigilosos em invisivel;
+		customPayloadSwitch.setChecked(true);
+		customPayloadSwitch.setVisibility(View.INVISIBLE);
+		payloadEdit.setVisibility(View.INVISIBLE);
 
 		// fix bugs
 		if (mConfig.getPrefsPrivate().getBoolean(Settings.CONFIG_PROTEGER_KEY, false)) {
@@ -512,8 +518,6 @@ public class SocksHttpMainActivity extends BaseActivity
 		SharedPreferences prefs = mConfig.getPrefsPrivate();
 
 		boolean isRunning = SkStatus.isTunnelActive();
-
-		customPayloadSwitch.setChecked(isCustomPayload);
 
 		if (prefs.getBoolean(Settings.CONFIG_PROTEGER_KEY, false)) {
 			payloadEdit.setEnabled(false);
