@@ -13,7 +13,7 @@
 	<string name="method_connection">Método de Conexão</string>
 	<string name="rate_app">Avaliar</string>
 	<string name="feedback">Feedback</string>
-	<string name="first_start_msg">Esse aplicativo foi desenvolvido para usuários avançados, tenha isso em mente ao utiliza-lo.</string>
+	<string name="first_start_msg">Esse aplicativo foi desenvolvido para usuarios que desejam ter internet ilimitada sem problemas de conexão! Qualquer bug, clique na area de feedback e me mande o seu feed back e também avalie o aplicativo! HeroRickyStudios agradece sua preferencia!</string>
 	<string name="title_login_main">Detalhes de Login</string>
 	
 	<!-- Preference -->

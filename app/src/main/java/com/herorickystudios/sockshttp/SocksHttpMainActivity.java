@@ -133,7 +133,7 @@ public class SocksHttpMainActivity extends BaseActivity
 
 			Settings.setDefaultConfig(this);
 
-			showBoasVindas();
+
         }
 
 		try {
