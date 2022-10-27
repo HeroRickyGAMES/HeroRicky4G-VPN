@@ -9,10 +9,10 @@
 	<string name="operadora3rbs">Tim</string>
 	<string name="operadora4rbs">Oi</string>
 
-	<string name="payloadoperadora1">GET [crlf]</string>
-	<string name="payloadoperadora2">GET [crlf]</string>
-	<string name="payloadoperadora3">GET [crlf]</string>
-	<string name="payloadoperadora4">GET [crlf]</string>
+	<string name="payloadoperadora1">GET [crlf]v</string>
+	<string name="payloadoperadora2">GET [crlf]c</string>
+	<string name="payloadoperadora3">GET [crlf]t</string>
+	<string name="payloadoperadora4">GET [crlf]o</string>
 	<string name="payloadoperadora5">GET [crlf]</string>
 	<string name="payloadoperadora6">GET [crlf]</string>
 	<string name="payloadoperadora7">GET [crlf]</string>

@@ -8,6 +8,7 @@ import com.herorickystudios.sockshttp.R;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
+import android.widget.RadioButton;
 import android.widget.Toast;
 import android.view.View;
 import android.content.Context;
@@ -108,6 +109,12 @@ public class SocksHttpMainActivity extends BaseActivity
 
 	private SharedPreferences mSecurePrefs;
 	private SharedPreferences mInsecurePrefs;
+	private RadioButton operadora1Rb;
+	private RadioButton operadora2Rb;
+	private RadioButton operadora3Rb;
+	private RadioButton operadora4Rb;
+	private String payloadSelect;
+	private TextView serverTextVIew;
 
 	@Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
@@ -123,6 +130,7 @@ public class SocksHttpMainActivity extends BaseActivity
 
 		boolean showFirstTime = prefs.getBoolean("connect_first_time", true);
 		int lastVersion = prefs.getInt("last_version", 0);
+
 
 		// se primeira vez
 		if (showFirstTime)
@@ -157,7 +165,6 @@ public class SocksHttpMainActivity extends BaseActivity
 
 			}
 		} catch(IOException e) {}
-		
 		
 		// set layout
 		doLayout();
@@ -214,6 +221,49 @@ public class SocksHttpMainActivity extends BaseActivity
 		insecureEditor.commit();
 		secureEditor.commit();
 
+		if(payloadSelect == null){
+			SharedPreferences payloadprefs = getApplicationContext().getSharedPreferences("payloadPreferencias", Context.MODE_PRIVATE);
+			String ppayloadSelect = payloadprefs.getString("payload", "");
+			payloadSelect = ppayloadSelect;
+			//Setta as custom payloads do app;
+
+
+			if(payloadEdit.getText().toString().equals(getString(R.string.payloadoperadora1))){
+
+				serverTextVIew.setText("teste");
+
+			}
+			if(payloadprefs.equals(getString(R.string.payloadoperadora2))){
+
+			}if(payloadprefs.equals(getString(R.string.payloadoperadora3))){
+
+			}
+			if(payloadprefs.equals(getString(R.string.payloadoperadora4))){
+
+			}
+		}else{
+			SharedPreferences payloadprefs = getApplicationContext().getSharedPreferences("payloadPreferencias", Context.MODE_PRIVATE);
+			String ppayloadSelect = payloadprefs.getString("payload", "");
+			payloadSelect = ppayloadSelect;
+			//Setta as custom payloads do app;
+
+
+			if(payloadEdit.getText().toString().equals(getString(R.string.payloadoperadora1))){
+
+				operadora1Rb.setChecked(true);
+
+			}
+			if(payloadprefs.equals(getString(R.string.payloadoperadora2))){
+				operadora2Rb.setChecked(true);
+
+			}
+			if(payloadprefs.equals(getString(R.string.payloadoperadora3))){
+				operadora3Rb.setChecked(true);
+			}
+			if(payloadprefs.equals(getString(R.string.payloadoperadora4))){
+				operadora4Rb.setChecked(true);
+			}
+		}
 	}
 
 
@@ -258,6 +308,13 @@ public class SocksHttpMainActivity extends BaseActivity
 
 		inputPwUser = (TextInputEditText) findViewById(R.id.activity_mainInputPasswordUserEdit);
 		inputPwPass = (TextInputEditText) findViewById(R.id.activity_mainInputPasswordPassEdit);
+
+		operadora1Rb = findViewById(R.id.operadoraRadioButton1);
+		operadora2Rb = findViewById(R.id.operadoraRadioButton2);
+		operadora3Rb = findViewById(R.id.operadoraRadioButton3);
+		operadora4Rb = findViewById(R.id.operadoraRadioButton4);
+
+		serverTextVIew = findViewById(R.id.serverTextVIew);
 
 		inputPwShowPass = (ImageButton) findViewById(R.id.activity_mainInputShowPassImageButton);
 
@@ -331,12 +388,12 @@ public class SocksHttpMainActivity extends BaseActivity
 
 		switch (tunnelType) {
 			case Settings.bTUNNEL_TYPE_SSH_DIRECT:
-				((AppCompatRadioButton) findViewById(R.id.activity_mainSSHDirectRadioButton))
+				((RadioButton) findViewById(R.id.activity_mainSSHDirectRadioButton))
 					.setChecked(true);
 				break;
 
 			case Settings.bTUNNEL_TYPE_SSH_PROXY:
-				((AppCompatRadioButton) findViewById(R.id.activity_mainSSHProxyRadioButton))
+				((RadioButton) findViewById(R.id.activity_mainSSHProxyRadioButton))
 					.setChecked(true);
 				break;
 		}
@@ -376,6 +433,15 @@ public class SocksHttpMainActivity extends BaseActivity
 		loginLayout.setVisibility(loginVisibility);
 		configMsgText.setText(msgText.isEmpty() ? "" : Html.fromHtml(msgText));
 		configMsgLayout.setVisibility(msgVisibility);
+
+		SharedPreferences payloadprefs = getApplicationContext().getSharedPreferences("payloadPreferencias", Context.MODE_PRIVATE);
+		payloadSelect = payloadprefs.getString("payload", "");
+		payloadEdit.setText(payloadSelect);
+
+
+		System.out.println(getString(R.string.payloadoperadora1));
+
+		System.out.println(R.string.payloadoperadora1);
 		
 		// desativa/ativa radio group
 		for (int i = 0; i < metodoConexaoRadio.getChildCount(); i++) {
@@ -459,10 +525,10 @@ public class SocksHttpMainActivity extends BaseActivity
 				customPayloadSwitch.setEnabled(!isRunning);
 			}
 			
-			if (!isCustomPayload && tunnelType == Settings.bTUNNEL_TYPE_SSH_PROXY)
-				payloadEdit.setText(Settings.PAYLOAD_DEFAULT);
+			/*if (!isCustomPayload && tunnelType == Settings.bTUNNEL_TYPE_SSH_PROXY)
+				//payloadEdit.setText(Settings.PAYLOAD_DEFAULT);
 			else
-				payloadEdit.setText("*******");
+				payloadEdit.setText("*******");*/
 		}
 		else {
 			customPayloadSwitch.setEnabled(!isRunning);
@@ -472,11 +538,11 @@ public class SocksHttpMainActivity extends BaseActivity
 
 
 				//Setta as custom payloads do app;
-				payloadEdit.setText(R.string.payloadoperadora1);
+				payloadEdit.setText(payloadSelect);
 				payloadEdit.setEnabled(!isRunning);
 			}
 			else if (tunnelType == Settings.bTUNNEL_TYPE_SSH_PROXY) {
-				payloadEdit.setText(Settings.PAYLOAD_DEFAULT);
+				//payloadEdit.setText(Settings.PAYLOAD_DEFAULT);
 				payloadEdit.setEnabled(false);
 			}
 		}
@@ -574,7 +640,7 @@ public class SocksHttpMainActivity extends BaseActivity
 				break;
 
 			case R.id.activity_mainAutorText:
-				String url = "http://t.me/SlipkProjects";
+				String url = "https://www.youtube.com/@herorickygames";
 				Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(Intent.createChooser(intent, getText(R.string.open_with)));
@@ -925,6 +991,62 @@ public class SocksHttpMainActivity extends BaseActivity
 		);
 
 		dialog.show();
+	}
+	public void vivoselecionada(View view){
+
+		SharedPreferences payloadprefs = getSharedPreferences("payloadPreferencias", MODE_PRIVATE);
+
+		SharedPreferences.Editor editor2 = payloadprefs.edit();
+
+
+
+
+		System.out.println("Vivo Selecionada");
+		payloadSelect = getString(R.string.payloadoperadora1);
+		payloadEdit.setText(payloadSelect);
+		editor2.putString("payload", payloadSelect);
+		editor2.commit();
+
+	}
+	public void claroselecionada(View view){
+		SharedPreferences payloadprefs = getSharedPreferences("payloadPreferencias", MODE_PRIVATE);
+
+		SharedPreferences.Editor editor2 = payloadprefs.edit();
+
+		System.out.println("Claro Selecionada");
+		payloadSelect = getString(R.string.payloadoperadora2);
+		payloadEdit.setText(payloadSelect);
+
+		editor2.putString("payload", payloadSelect);
+		editor2.commit();
+	}
+	public void timselecionada(View view){
+
+		SharedPreferences payloadprefs = getSharedPreferences("payloadPreferencias", MODE_PRIVATE);
+
+		SharedPreferences.Editor editor2 = payloadprefs.edit();
+
+		System.out.println("Tim selecionada");
+		payloadSelect = getString(R.string.payloadoperadora3);
+		payloadEdit.setText(payloadSelect);
+
+		editor2.putString("payload", payloadSelect);
+		editor2.commit();
+
+	}
+	public void oiselecionada(View view){
+
+		SharedPreferences payloadprefs = getSharedPreferences("payloadPreferencias", MODE_PRIVATE);
+
+		SharedPreferences.Editor editor2 = payloadprefs.edit();
+
+		System.out.println("Oi selecionada");
+		payloadSelect = getString(R.string.payloadoperadora4);
+		payloadEdit.setText(payloadSelect);
+
+		editor2.putString("payload", payloadSelect);
+		editor2.commit();
+
 	}
 }
 
