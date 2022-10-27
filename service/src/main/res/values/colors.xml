@@ -3,6 +3,7 @@
 
 	<color name="gray_light">#DEDEDE</color>
 	<color name="blue">#AF0000</color>
+	<color name="darkTheme">#2B2B2B</color>
 	<color name="blue_light">#FB0A0A</color>
 	<color name="gray">#808080</color>
 	<color name="black_light">#333333</color>

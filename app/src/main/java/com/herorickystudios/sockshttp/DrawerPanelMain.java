@@ -117,7 +117,7 @@ public class DrawerPanelMain
 				break;
 
 			case R.id.miAvaliarPlaystore:
-				String url = "https://play.google.com/store/apps/details?id=com.slipkprojects.sockshttp";
+				String url = "https://play.google.com/store/apps/details?id=com.herorickystudios.sockshttp";
 				Intent intent3 = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 				intent3.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				mActivity.startActivity(Intent.createChooser(intent3, mActivity.getText(R.string.open_with)));
@@ -134,15 +134,15 @@ public class DrawerPanelMain
 					}
 				}
 				else {
-					Intent email = new Intent(Intent.ACTION_SEND);  
+					Intent email = new Intent(Intent.ACTION_SEND);
 					email.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-					email.putExtra(Intent.EXTRA_EMAIL, new String[]{"slipkprojects@gmail.com"});  
-					email.putExtra(Intent.EXTRA_SUBJECT, "SocksHttp - " + mActivity.getString(R.string.feedback));  
-					//email.putExtra(Intent.EXTRA_TEXT, "");  
+					email.putExtra(Intent.EXTRA_EMAIL, new String[]{"ricojn9@gmail.com"});
+					email.putExtra(Intent.EXTRA_SUBJECT, "HeroRicky4G VPN - " + mActivity.getString(R.string.feedback));
+					//email.putExtra(Intent.EXTRA_TEXT, "");
 
-					//need this to prompts email client only  
-					email.setType("message/rfc822");  
+					//need this to prompts email client only
+					email.setType("message/rfc822");
 
 					mActivity.startActivity(Intent.createChooser(email, "Choose an Email client:"));
 				}

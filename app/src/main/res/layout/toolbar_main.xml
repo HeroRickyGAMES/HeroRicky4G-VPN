@@ -7,12 +7,13 @@
 
 	<androidx.appcompat.widget.Toolbar
 		android:id="@+id/toolbar_main"
-		android:theme="@style/ToolbarTheme"
-		android:background="?attr/colorPrimary"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:background="@color/red"
+		android:backgroundTint="#FF0000"
 		android:minHeight="?attr/actionBarSize"
-		app:titleTextAppearance="@style/Toolbar.TitleText"
-		app:popupTheme="@style/AppTheme.PopupOverlay" />
+		android:theme="@style/ToolbarTheme"
+		app:popupTheme="@style/AppTheme.PopupOverlay"
+		app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 </com.google.android.material.appbar.AppBarLayout>
