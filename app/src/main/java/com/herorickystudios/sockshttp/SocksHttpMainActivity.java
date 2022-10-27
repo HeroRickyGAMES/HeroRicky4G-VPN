@@ -468,7 +468,11 @@ public class SocksHttpMainActivity extends BaseActivity
 			customPayloadSwitch.setEnabled(!isRunning);
 
 			if (isCustomPayload) {
-				payloadEdit.setText(R.string.payloadfill);
+
+
+
+				//Setta as custom payloads do app;
+				payloadEdit.setText(R.string.payloadoperadora1);
 				payloadEdit.setEnabled(!isRunning);
 			}
 			else if (tunnelType == Settings.bTUNNEL_TYPE_SSH_PROXY) {

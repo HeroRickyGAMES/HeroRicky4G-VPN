@@ -161,6 +161,64 @@
 		</LinearLayout>
 
 		<LinearLayout
+			android:id="@+id/selecioneOperadora"
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="vertical"
+			android:background="@color/colorSecondaryBackground"
+			android:gravity="center"
+			android:padding="5dp"
+			android:layout_marginTop="3dp">
+
+			<RadioGroup
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:breakStrategy="balanced"
+				android:gravity="center"
+				android:orientation="horizontal">
+
+				<RadioButton
+					android:id="@+id/operadoraRadioButton1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:paddingRight="15dp"
+					android:text="@string/operadora1rbs"
+					android:textColor="#FFFFFF" />
+
+				<RadioButton
+					android:id="@+id/operadoraRadioButton2"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:paddingRight="15dp"
+					android:text="@string/operadora2rbs"
+					android:textColor="#FFFFFF" />
+
+				<RadioButton
+					android:id="@+id/operadoraRadioButton3"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:layout_weight="1"
+					android:paddingRight="15dp"
+					android:text="@string/operadora3rbs"
+					android:textColor="#FFFFFF" />
+
+				<RadioButton
+					android:id="@+id/operadoraRadioButton4"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:layout_weight="1"
+					android:paddingRight="15dp"
+					android:text="@string/operadora4rbs"
+					android:textColor="#FFFFFF" />
+			</RadioGroup>
+
+		</LinearLayout>
+
+		<LinearLayout
 			android:id="@+id/activity_mainInputPayloadLinearLayout"
 			android:layout_height="wrap_content"
 			android:layout_width="match_parent"
