@@ -1,0 +1,56 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 32
+
+    defaultConfig {
+        applicationId "com.herorickystudios.sockshttp"
+        minSdkVersion 21
+        targetSdkVersion 32
+        versionCode 25
+        versionName "1.1.1"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    // required to avoid crash on Android 12 API 31
+    implementation 'androidx.work:work-runtime-ktx:2.7.0'
+
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+
+    // required to avoid crash on Android 12 API 31
+    implementation 'androidx.work:work-runtime-ktx:2.7.1'
+
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:28.0.0'
+
+    //noinspection GradleCompatible
+    implementation "com.android.support:design:24.0.0"
+
+	// outros
+	implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+	implementation 'com.google.android.gms:play-services-ads-lite:11.8.0'
+	
+	implementation project(':service')
+    implementation 'androidx.drawerlayout:drawerlayout:1.1.1'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.preference:preference:1.2.0'
+}

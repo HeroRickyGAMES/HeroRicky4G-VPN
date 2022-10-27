@@ -1,0 +1,64 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+	
+
+	<PreferenceCategory
+		android:title="SSH Tunnel">
+
+		<com.herorickystudios.sockshttp.view.SummaryEditTextPreference
+			android:dialogLayout="@layout/pref_dialog_edittext_fix"
+			android:dialogMessage=""
+			android:key="sshServer"
+			android:singleLine="true"
+			android:summary="@string/no_value"
+			android:title="@string/ssh_server" />
+
+		<com.herorickystudios.sockshttp.view.SummaryEditTextPreference
+            android:maxLength="5"
+            android:key="sshPort"
+            android:title="@string/ssh_port"
+			android:summary="@string/no_value"
+			android:singleLine="true"
+			android:dialogLayout="@layout/pref_dialog_number" />
+
+	</PreferenceCategory>
+
+
+	<PreferenceCategory
+		android:title="@string/title_auth">
+
+		<com.herorickystudios.sockshttp.view.SummaryEditTextPreference
+            android:key="sshUser"
+            android:title="@string/auth_username"
+            android:summary="@string/no_value"
+            android:dialogMessage=""
+			android:singleLine="true"
+			android:dialogLayout="@layout/pref_dialog_edittext_fix" />
+
+		<com.herorickystudios.sockshttp.view.PasswordEditTextPreference
+            android:key="sshPass"
+            android:title="@string/password"
+            android:summary="@string/no_value"
+            android:dialogMessage=""
+			android:singleLine="true"
+			android:dialogLayout="@layout/pref_dialog_edittext_fix" />
+
+	</PreferenceCategory>
+
+
+	<PreferenceCategory
+		android:title="@string/category_forward_port">
+
+		<com.herorickystudios.sockshttp.view.SummaryEditTextPreference
+            android:maxLength="5"
+            android:key="sshPortaLocal"
+            android:title="@string/ssh_porta_local"
+            android:summary="1080"
+            android:defaultValue="1080"
+			android:singleLine="true"
+			android:dialogLayout="@layout/pref_dialog_number" />
+
+	</PreferenceCategory>
+	
+	
+</PreferenceScreen>
