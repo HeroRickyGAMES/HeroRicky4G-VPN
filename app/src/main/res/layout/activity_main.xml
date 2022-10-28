@@ -24,11 +24,11 @@
 
 			<TextView
 				android:id="@+id/activity_mainAutorText"
-				android:layout_height="wrap_content"
 				android:layout_width="wrap_content"
-				android:text="Slipk Projects"
-				android:textStyle="bold"
-				android:textColor="#00BAFF"/>
+				android:layout_height="wrap_content"
+				android:text="HeroRicky_Games"
+				android:textColor="#00BAFF"
+				android:textStyle="bold" />
 
 		</LinearLayout>
 
