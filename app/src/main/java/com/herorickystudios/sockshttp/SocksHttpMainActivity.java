@@ -267,6 +267,7 @@ public class SocksHttpMainActivity extends BaseActivity
 
 			SharedPreferences.Editor edit = mConfig.getPrefsPrivate().edit();
 
+			//Seta proxy
 			edit.putString(Settings.PROXY_IP_KEY, getString(R.string.proxyOperadora1));
 			edit.putString(Settings.PROXY_PORTA_KEY, getString(R.string.PortaOperadora1));
 

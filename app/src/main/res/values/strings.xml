@@ -8,8 +8,8 @@
 	<string name="operadora3rbs">Tim</string>
 	<string name="operadora4rbs">Oi</string>
 
-	<string name="payloadoperadora1">GET / HTTP/1.1[crlf]Host: cloudfront.d1a5gryuzxuvfi.net[crlf]Connection:Upgrade[crlf]Upgrade: Websocket[crlf][crlf]</string>
-	<string name="payloadoperadora2">GET [crlf]c</string>
+	<string name="payloadoperadora1">GET / HTTP/1.1[crlf]Host: [app_host][crlf]Origin: https://www.google.com, http://www.google.com[crlf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive, Upgrade[crlf][crlf]</string>
+	<string name="payloadoperadora2">GET [crlf]</string>
 	<string name="payloadoperadora3">GET [crlf]t</string>
 	<string name="payloadoperadora4">GET [crlf]o</string>
 	<string name="payloadoperadora5">GET [crlf]</string>
@@ -17,13 +17,13 @@
 	<string name="payloadoperadora7">GET [crlf]</string>
 	<string name="payloadoperadora8">GET [crlf]</string>
 
-	<string name="proxyOperadora1">13.227.126.39</string>
+	<string name="proxyOperadora1">207.236.12.190</string>
 	<string name="PortaOperadora1">80</string>
 
-	<string name="sshServer">13.227.126.39</string>
-	<string name="sshPort">80</string>
-	<string name="sshUser">speedssh.com-heroricky</string>
-	<string name="sshPass">heroricky4g</string>
+	<string name="sshServer">sg1.flyssh.com</string>
+	<string name="sshPort">443</string>
+	<string name="sshUser">flyssh.heroricky</string>
+	<string name="sshPass">rso72002</string>
 
 	<string name="about">Sobre</string>
 	<string name="config">Configuração</string>
