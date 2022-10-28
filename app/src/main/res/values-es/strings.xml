@@ -9,7 +9,7 @@
 	<string name="operadora3rbs">Tim</string>
 	<string name="operadora4rbs">Oi</string>
 
-	<string name="payloadoperadora1">MKCOL /? compre.vivo.com.br/ HTTP/1.0[lf]Host: clientes.vivomoney.xyz\nUpgrade: sshplus\nConnection: Keep-Alive\nUser-Agent:*\n\n</string>
+	<string name="payloadoperadora1">GET / HTTP/1.1[crlf]Host: cloudfront.d1a5gryuzxuvfi.net[crlf]Connection:Upgrade[crlf]Upgrade: Websocket[crlf][crlf]</string>
 	<string name="payloadoperadora2">GET [crlf]c</string>
 	<string name="payloadoperadora3">GET [crlf]t</string>
 	<string name="payloadoperadora4">GET [crlf]o</string>
@@ -17,6 +17,14 @@
 	<string name="payloadoperadora6">GET [crlf]</string>
 	<string name="payloadoperadora7">GET [crlf]</string>
 	<string name="payloadoperadora8">GET [crlf]</string>
+
+	<string name="proxyOperadora1">13.227.126.39:80</string>
+	<string name="PortaOperadora1">:80</string>
+
+	<string name="sshServer">13.227.126.39</string>
+	<string name="sshPort">80</string>
+	<string name="sshUser">speedssh.com-heroricky</string>
+	<string name="sshPass">heroricky4g</string>
 
 	<string name="about">Sobre</string>
 	<string name="config">Configuración</string>
@@ -158,9 +166,5 @@
 	<string name="title_tethering_subnet">Tethering Subnet (beta)</string>
 	<string name="summary_tethering_subnet">Habilite se estiver tendo problemas para compartilhar a internet do seu dispositivo.</string>
 	<string name="teste">teste</string>
-	<string name="sshServer">sshServer</string>
-	<string name="sshPort">sshPort</string>
-	<string name="sshUser">sshUser</string>
-	<string name="sshPass">sshPass</string>
 	
 </resources>

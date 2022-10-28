@@ -86,11 +86,17 @@ public class ProxyRemoteDialogFragment extends DialogFragment
 		else {
 			proxyAutenticacaoCheck.setEnabled(true);
 		}
-		
+
+
+		//Setta o proxyIP
 		proxyRemotoIpEdit.setText(mConfig.getPrivString(Settings.PROXY_IP_KEY));
-		
+
+		//Setta Porta
+		proxyRemotoPortaEdit.setText(mConfig.getPrivString(Settings.PROXY_PORTA_KEY));
+
 		if (!mConfig.getPrivString(Settings.PROXY_PORTA_KEY).isEmpty())
-			proxyRemotoPortaEdit.setText(mConfig.getPrivString(Settings.PROXY_PORTA_KEY));
+
+
 		
 		proxyAutenticacaoCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 			@Override
