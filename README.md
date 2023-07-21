@@ -1,4 +1,4 @@
-# SocksHttp (HeoRickySocks)
+# SocksHttp (HeroRickySocks)
 
 Estou editando esse codigo fonte para lançar o meu proximo aplicativo!
 
